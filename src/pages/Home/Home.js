@@ -49,6 +49,7 @@ const Home = () => {
               </div>
 
               <h2 className="ml-8 text-xl">What's happening</h2>
+
             </div>
 
             <BiChevronRight className="ml-4 text-4xl text-product-pink" />
