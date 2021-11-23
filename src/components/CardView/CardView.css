@@ -1,0 +1,75 @@
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+.cardview {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+}
+
+.cardview-header {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 7vh;
+  padding: 15px 8px 0 8px;
+}
+
+.cardview-button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px;
+}
+
+.backbutton {
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.cardview-body {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 370px;
+  justify-content: center;
+  padding: 10px;
+  margin: 25px auto;
+  align-items: center;
+  min-height: 200px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  text-align: justify;
+}
