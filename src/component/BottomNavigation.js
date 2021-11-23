@@ -1,7 +1,7 @@
 import { IoFastFoodOutline } from 'react-icons/io5';
 import { BiHomeAlt, BiPlusCircle, BiLocationPlus } from 'react-icons/bi';
 
-function bottomNavigation() {
+function BottomNavigation() {
   return (
     <div className="flex fixed items-center justify-evenly w-full mt-2 bg-gray-100 h-14 ">
       <IoFastFoodOutline className=" text-4xl   text-gray-600" />
@@ -12,4 +12,4 @@ function bottomNavigation() {
   );
 }
 
-export default bottomNavigation;
+export default BottomNavigation;

@@ -6,11 +6,9 @@ import {
   BiSpa,
   BiCheckCircle,
   BiChevronRight,
-  BiHomeAlt,
-  BiPlusCircle,
-  BiLocationPlus,
 } from 'react-icons/bi';
-import { IoFastFoodOutline } from 'react-icons/io5';
+
+import BottomNavigation from '../../component/BottomNavigation';
 
 const Home = () => {
   return (
@@ -81,12 +79,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="flex fixed fixed inset-x-0 bottom-0 z-10 items-center justify-evenly w-full mt-2 bg-gray-50 h-14 ">
-        <IoFastFoodOutline className=" text-4xl   text-gray-600" />
-        <BiHomeAlt className=" text-4xl  cursor-pointer  text-gray-600" />
-        <BiPlusCircle className=" text-4xl   cursor-pointer text-gray-600" />
-        <BiLocationPlus className=" text-4xl   cursor-pointer text-gray-600" />
-      </div>
+      <BottomNavigation />
     </div>
   );
 };
