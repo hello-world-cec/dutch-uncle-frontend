@@ -2,6 +2,7 @@ import react from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import ContentView from './components/ContentView/ContentView';
+import CardView from './components/CardView/CardView';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/content" element={<ContentView />} />
+          <Route path="/card" element={<CardView />} />
           <Route path="/" element={<Home />} />
         </Routes>
       </Router>

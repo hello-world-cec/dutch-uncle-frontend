@@ -7,7 +7,7 @@ import {
   BiCheckCircle,
   BiChevronRight,
 } from 'react-icons/bi';
-import BottomNavigation from '../../components/BottomNavigation';
+import BottomNavigation from '../../components/BottomNavigation/BottomNavigation';
 
 const Home = () => {
   return (
@@ -65,7 +65,7 @@ const Home = () => {
             <BiChevronRight className="ml-4 text-4xl text-product-blue" />
           </div>
         </div>
-        <div className="px-4 mt-6">
+        <div className="px-4 mt-6 mb-16">
           <div className="flex items-center justify-between w-full">
             <div className="flex items-center justify-center">
               <div className="flex items-center justify-center text-2xl rounded-md w-14 h-14 bg-product-yellow text-product-light">
