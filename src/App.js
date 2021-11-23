@@ -1,9 +1,10 @@
-import react from "react";
+import react from 'react';
+import Home from './pages/Home/Home';
 
 function App() {
   return (
     <div className="App">
-      <div className='w-screen h-screen bg-blue-500'></div> 
+      <Home />
     </div>
   );
 }
