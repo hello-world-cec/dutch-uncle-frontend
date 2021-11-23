@@ -1,12 +1,14 @@
 import react from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
+import ContentView from './components/ContentView/ContentView';
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Routes>
+          <Route path="/content" element={<ContentView />} />
           <Route path="/" element={<Home />} />
         </Routes>
       </Router>
