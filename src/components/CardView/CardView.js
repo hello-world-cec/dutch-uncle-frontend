@@ -1,12 +1,15 @@
 import React from 'react';
 import './CardView.css';
+import { FiChevronLeft } from 'react-icons/fi';
 
 function CardView() {
   return (
     <div className="cardview">
       <div className="cardview-header">
         <div className="cardview-button">
-          <button className="backbutton">*</button>
+          <button className="backbutton">
+            <FiChevronLeft />
+          </button>
         </div>
       </div>
       <div className="cardview-body">
