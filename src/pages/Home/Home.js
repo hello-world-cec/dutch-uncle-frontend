@@ -13,11 +13,11 @@ const Home = () => {
   return (
     <div className="w-screen h-screen p-8">
       <div className="flex items-center justify-between w-full h-12">
-        <div className="flex items-center h-full px-6 py-4 rounded-md bg-product-blue text-product-dark">
+        <div className="flex items-center h-full p-4 rounded-md bg-product-blue text-product-dark">
           <BiCurrentLocation />
           <h2 className="ml-4">Chengannur, India</h2>
         </div>
-        <div className="h-full px-6 py-4 rounded-md bg-product-yellow">
+        <div className="h-full p-4 rounded-md bg-product-yellow">
           <FiUser />
         </div>
       </div>
