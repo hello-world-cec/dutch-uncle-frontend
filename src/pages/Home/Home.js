@@ -15,7 +15,7 @@ const Home = () => {
       <div className="flex items-center justify-between w-full h-12">
         <div className="flex items-center h-full px-6 py-4 rounded-md bg-product-blue text-product-dark">
           <BiCurrentLocation />
-          <h2 className="ml-4 font-semibold ">Chengannur, India</h2>
+          <h2 className="ml-4">Chengannur, India</h2>
         </div>
         <div className="h-full px-6 py-4 rounded-md bg-product-yellow">
           <FiUser />
@@ -32,7 +32,7 @@ const Home = () => {
       <div className="mt-8">
         <h2 className="w-full text-xl text-center text-product-dark">
           <span className="text-4xl font-semibold text-product-blue">
-            Chengannur {' '}
+            Chengannur&nbsp;
           </span>
           is a Municipality in the Alappuzha district of Kerala State, India. It
           is located in the extreme eastern part of the Alappuzha district, on
@@ -76,7 +76,6 @@ const Home = () => {
           <BiChevronRight className="ml-4 text-4xl text-product-yellow" />
         </div>
       </div>
-
     </div>
   );
 };
