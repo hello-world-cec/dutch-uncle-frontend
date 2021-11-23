@@ -1,12 +1,17 @@
 import react from 'react';
-import CardView from './components/CardView/CardView';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home/Home';
+import ContentView from './components/ContentView/ContentView';
 
 function App() {
   return (
     <div className="App">
-      <div className="w-screen h-screen">
-        <CardView />
-      </div>
+      <Router>
+        <Routes>
+          <Route path="/content" element={<ContentView />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
