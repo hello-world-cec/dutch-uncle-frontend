@@ -24,7 +24,7 @@ const CardView = ({ showBackButton, title }) => {
           </h2>
         </div>
       )}
-      <div className="cardview-body">
+      <div className="mb-24 cardview-body">
         <div className="card bg-product-blue text-product-dark">
           <div className="text-2xl">Lorem ipsum</div>
           <div className="content">
