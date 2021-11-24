@@ -1,17 +1,29 @@
 import React from 'react';
 import { BiChevronLeft } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 import './CardView.css';
 
-function CardView() {
+const CardView = ({ showBackButton, title }) => {
   return (
     <div className="cardview">
-      <div className="cardview-header">
-        <div className="cardview-button">
-          <button className="rounded-md backbutton bg-product-yellow">
-            <BiChevronLeft className="text-2xl" />
-          </button>
+      {showBackButton && (
+        <div className="cardview-header">
+          <Link to="/">
+            <div className="cardview-button">
+              <button className="rounded-md backbutton bg-product-yellow">
+                <BiChevronLeft className="text-2xl" />
+              </button>
+            </div>
+          </Link>
         </div>
-      </div>
+      )}
+      {title && (
+        <div className="mt-6 cardview-header">
+          <h2 className="text-3xl font-semibold title text-product-dark">
+            {title}
+          </h2>
+        </div>
+      )}
       <div className="cardview-body">
         <div className="card bg-product-blue text-product-dark">
           <div className="text-2xl">Lorem ipsum</div>
@@ -38,6 +50,6 @@ function CardView() {
       </div>
     </div>
   );
-}
+};
 
 export default CardView;
