@@ -46,7 +46,7 @@ const CardView = ({ showBackButton, title, news, places, services }) => {
             return (
               <GeneralCard
                 key={index}
-                title={data.name}
+                title={data.name ? data.name : data.title}
                 about={data.about}
                 imageURL={data.imageURL}
               />

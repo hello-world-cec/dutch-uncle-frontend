@@ -20,6 +20,7 @@ const Home = () => {
   const [searchDropDown, setSearchDropDown] = useState(false);
   const [loading, setLoading] = useState(true);
 
+
   useEffect(() => {
     setCurrentLocation(deviceLocation);
     refreshLocationDetails().then((details) => {
@@ -39,7 +40,9 @@ const Home = () => {
             <h2 className="ml-4 font-semibold ">{data.name}, India</h2>
           </div>
           <div className="h-full px-6 py-4 rounded-md bg-product-yellow">
-            <FiUser />
+            <Link to={'/profile'}>
+              <FiUser />
+            </Link>
           </div>
         </div>
         <div className="relative flex items-center mt-8">
@@ -89,7 +92,6 @@ const Home = () => {
 
         <div className="mt-8">
           <h2 className="w-full text-xl text-center text-product-dark">
-            {/* TODO: REPLACE WITH data.overview */}
             {data.overview}
           </h2>
         </div>
