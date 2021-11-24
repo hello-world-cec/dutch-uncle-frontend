@@ -1,9 +1,10 @@
-import react from 'react';
+import React, { useState } from 'react';
 import { BiChevronLeft } from 'react-icons/bi';
-import { FiMoreVertical } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
+import DropDown from '../DropDown';
 
 const ContentView = ({ title }) => {
+  const [open, setOpen] = useState(false);
   return (
     <div className="flex flex-col items-center w-screen h-screen pt-8 bg-product-dark">
       <div className="flex items-center justify-between w-full h-12">
@@ -12,8 +13,12 @@ const ContentView = ({ title }) => {
             <BiChevronLeft className="text-2xl" />
           </div>
         </Link>
-        <div className="h-full p-4 mr-8 rounded-md bg-product-light">
-          <FiMoreVertical />
+        <div
+          onClick={() => {
+            setOpen(!open);
+          }}
+          className="h-full p-4 mr-8 rounded-md bg-product-light relative">
+          <DropDown open={open} />
         </div>
       </div>
 
