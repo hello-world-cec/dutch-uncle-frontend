@@ -2,7 +2,7 @@ import react from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ContentView from './components/ContentView/ContentView';
 import CardView from './components/CardView/CardView';
-import UserLogin from './components/UserLogin/UserLogin';
+import UserLogin from './pages/UserLogin/UserLogin';
 import Home from './pages/Home/Home';
 import News from './pages/News/News';
 import Culture from './pages/Culture/Culture';

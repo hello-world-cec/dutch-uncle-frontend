@@ -24,7 +24,6 @@ const Home = () => {
     setCurrentLocation(deviceLocation);
     refreshLocationDetails().then((details) => {
       setData(details);
-      console.log('hello');
       setLoading(false);
     });
   }, [deviceLocation]);
