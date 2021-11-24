@@ -17,7 +17,8 @@ const Home = () => {
   const [deviceLocation, setDeviceLocation] = useState('Chengannur');
   const json = localStorage.getItem('data');
   const [data, setData] = useState(JSON.parse(json));
-
+  const [searchDropDown, setSearchDropDown] = useState(false);
+  
   useEffect(() => {
     setCurrentLocation(deviceLocation);
     refreshLocationDetails();
@@ -43,8 +44,34 @@ const Home = () => {
             type="text"
             className="w-full p-4 pl-12 border rounded-md bg-product-blue h-14 focus:outline-none text-product-dark placeholder-product-dark"
             placeholder="Explore"
+            onClick={() => {
+              setSearchDropDown(!searchDropDown);
+            }}
+            onBlur={() => {
+              setSearchDropDown(!searchDropDown);
+            }}
           />
+          {searchDropDown && (
+            <div className="top-14 rounded-md w-full  absolute z-50 flex flex-col drop-shadow-md bg-red-900 text-gray-700 bg-product-light ring-black ring-1 ring-opacity-5 rounded-sm">
+              <a
+                className="hover:bg-gray-100 border-b   px-6 py-4 text-sm"
+                href="#"
+              >
+                Chengannur
+              </a>
+              <a
+                className="hover:bg-gray-200  border-b px-6 py-4 text-sm"
+                href="#"
+              >
+                Kochi
+              </a>
+              <a className="hover:bg-gray-100     px-6 py-4 text-sm" href="#">
+                Alappuzha
+              </a>
+            </div>
+          )}
         </div>
+
         <div className="mt-8">
           <h2 className="w-full text-xl text-center text-product-dark">
             {/* TODO: REPLACE WITH data.overview */}
