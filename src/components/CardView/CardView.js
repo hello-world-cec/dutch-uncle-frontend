@@ -1,16 +1,19 @@
 import React from 'react';
 import { BiChevronLeft } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 import './CardView.css';
 
 function CardView() {
   return (
     <div className="cardview">
       <div className="cardview-header">
-        <div className="cardview-button">
-          <button className="rounded-md backbutton bg-product-yellow">
-            <BiChevronLeft className="text-2xl" />
-          </button>
-        </div>
+        <Link to="/">
+          <div className="cardview-button">
+            <button className="rounded-md backbutton bg-product-yellow">
+              <BiChevronLeft className="text-2xl" />
+            </button>
+          </div>
+        </Link>
       </div>
       <div className="cardview-body">
         <div className="card bg-product-blue text-product-dark">

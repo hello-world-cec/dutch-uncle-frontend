@@ -1,14 +1,17 @@
 import react from 'react';
 import { BiChevronLeft } from 'react-icons/bi';
 import { FiMoreVertical } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 const ContentView = () => {
   return (
     <div className="flex flex-col items-center w-screen h-screen pt-8 bg-product-dark">
       <div className="flex items-center justify-between w-full h-12">
-        <div className="flex items-center h-full p-4 ml-8 rounded-md bg-product-yellow text-product-dark">
-          <BiChevronLeft className="text-2xl" />
-        </div>
+        <Link to="/">
+          <div className="flex items-center h-full p-4 ml-8 rounded-md bg-product-yellow text-product-dark">
+            <BiChevronLeft className="text-2xl" />
+          </div>
+        </Link>
         <div className="h-full p-4 mr-8 rounded-md bg-product-light">
           <FiMoreVertical />
         </div>
