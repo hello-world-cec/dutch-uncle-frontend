@@ -3,7 +3,7 @@ import CardView from '../../components/CardView/CardView';
 const News = () => {
   return (
     <div>
-      <CardView />
+      <CardView showBackButton={true} title={'Whats Happening'} />
     </div>
   );
 };

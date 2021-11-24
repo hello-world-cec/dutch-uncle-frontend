@@ -4,7 +4,7 @@ import CardView from '../../components/CardView/CardView';
 const Restaurants = () => {
   return (
     <div>
-      <CardView />
+      <CardView title={'Restaurants Nearby'} />
       <BottomNavigation />
     </div>
   );
