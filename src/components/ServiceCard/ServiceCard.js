@@ -1,5 +1,4 @@
 import react from 'react';
-import './ServiceCard.css';
 import { BiPhone, BiLocationPlus,BiDoorOpen } from 'react-icons/bi'
 import { AiOutlineMail } from 'react-icons/ai'
 function ServiceCard() {
@@ -11,16 +10,16 @@ function ServiceCard() {
                     <p className="text-sm text-gray-600">(x kms away)</p>
                 </div>
                 <div className="flex items-center">
-                <BiLocationPlus className="text-4xl"/> <p className="text-gray-500 ml-4 font-normal text-base"> College of Engineering Chengannur, Chengannur P.O Alappuzha district, Kerala</p>
+                    <BiLocationPlus className="text-4xl"/> <p className="text-gray-500 ml-4 font-normal text-base"> College of Engineering Chengannur, Chengannur P.O Alappuzha district, Kerala</p>
                 </div>
                 <div className="flex items-center">
-                <BiPhone className="text-2xl" /> <p className="text-gray-500 ml-4 font-normal text-base">+91-9876 54 3210</p>   
+                    <BiPhone className="text-2xl" /> <p className="text-gray-500 ml-4 font-normal text-base">+91-9876 54 3210</p>   
                 </div>
                 <div className="flex items-center">
-                <AiOutlineMail className="text-xl" /> <p className="text-gray-500 ml-4 font-normal text-base">principal@ceconline.edu</p>   
+                    <AiOutlineMail className="text-xl" /> <p className="text-gray-500 ml-4 font-normal text-base">principal@ceconline.edu</p>   
                 </div>
                 <div className="flex items-center">
-                <BiDoorOpen className="text-xl" /> <p className="text-gray-500 ml-4 font-normal text-base">09:00 AM - 05:00 PM</p>   
+                    <BiDoorOpen className="text-xl" /> <p className="text-gray-500 ml-4 font-normal text-base">09:00 AM - 05:00 PM</p>   
                 </div>
             </div>
         </div>
