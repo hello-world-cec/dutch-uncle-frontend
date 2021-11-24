@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FiUser } from 'react-icons/fi';
 import {
   BiCurrentLocation,
@@ -10,8 +10,21 @@ import {
 } from 'react-icons/bi';
 import BottomNavigation from '../../components/BottomNavigation/BottomNavigation';
 import { Link } from 'react-router-dom';
+import { setCurrentLocation, refreshLocationDetails } from '../../api/PlaceAPI';
+
 const Home = () => {
+  //TODO: get default location from device location
+  const [deviceLocation, setDeviceLocation] = useState('Chengannur');
+  const json = localStorage.getItem('data');
+  const [data, setData] = useState(JSON.parse(json));
   const [searchDropDown, setSearchDropDown] = useState(false);
+  
+  useEffect(() => {
+    setCurrentLocation(deviceLocation);
+    refreshLocationDetails();
+    const json = localStorage.getItem('data');
+    setData(JSON.parse(json));
+  }, [deviceLocation]);
 
   return (
     <div className="h-screen">
@@ -19,7 +32,7 @@ const Home = () => {
         <div className="flex items-center justify-between w-full h-12">
           <div className="flex items-center h-full px-6 py-4 rounded-md bg-product-blue text-product-dark">
             <BiCurrentLocation />
-            <h2 className="ml-4 font-semibold ">Chengannur, India</h2>
+            <h2 className="ml-4 font-semibold ">{data.name}, India</h2>
           </div>
           <div className="h-full px-6 py-4 rounded-md bg-product-yellow">
             <FiUser />
@@ -61,12 +74,8 @@ const Home = () => {
 
         <div className="mt-8">
           <h2 className="w-full text-xl text-center text-product-dark">
-            <span className="text-4xl font-semibold text-product-blue">
-              Chengannur{' '}
-            </span>
-            is a Municipality in the Alappuzha district of Kerala State, India.
-            It is located in the extreme eastern part of the Alappuzha district,
-            on the banks of Pamba River.
+            {/* TODO: REPLACE WITH data.overview */}
+            {data.overview}
           </h2>
         </div>
         <div className="px-4 mt-8">

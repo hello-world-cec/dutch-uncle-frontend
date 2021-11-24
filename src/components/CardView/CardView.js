@@ -2,8 +2,10 @@ import React from 'react';
 import { BiChevronLeft } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import './CardView.css';
+import GeneralCard from '../GeneralCard/GeneralCard';
+import ServiceCard from '../ServiceCard/ServiceCard';
 
-const CardView = ({ showBackButton, title }) => {
+const CardView = ({ showBackButton, title, news, places, services }) => {
   return (
     <div className="cardview">
       {showBackButton && (
@@ -24,29 +26,47 @@ const CardView = ({ showBackButton, title }) => {
           </h2>
         </div>
       )}
-      <div className="cardview-body">
-        <div className="card bg-product-blue text-product-dark">
-          <div className="text-2xl">Lorem ipsum</div>
-          <div className="content">
-            Lorem ipsum odor amet, consectetuer adipiscing elit. Ac purus in
-            massa egestas mollis varius; dignissim elementum. Mollis tincidunt
-            mattis hendrerit dolor eros enim, nisi ligula ornare. Hendrerit
-            Mollis tincidunt mattis hendrerit dolor eros enim, nisi ligula
-            ornare. Hendrerit
-          </div>
-        </div>
 
-        <div className="card bg-product-blue text-product-dark">
-          <div className="text-2xl">Lorem ipsum</div>
-          <div className="content">
-            Lorem ipsum odor amet, consectetuer adipiscing elit. Ac purus in
-            massa egestas mollis varius; dignissim elementum. Mollis tincidunt
-            mattis hendrerit dolor eros enim, nisi ligula ornare. Hendrerit
-            Lorem ipsum odor amet, consectetuer adipiscing elit. Ac purus in
-            massa egestas mollis varius; dignissim elementum. Mollis tincidunt
-            mattis hendrerit dolor eros enim, nisi ligula ornare. Hendrerit
-          </div>
-        </div>
+      <div className="mb-24 cardview-body">
+        {news &&
+          news.map((data, index) => {
+            return (
+              <div
+                className="card bg-product-blue text-product-dark"
+                key={index}
+              >
+                <div className="text-2xl">{data.title}</div>
+                <div className="content">{data.content}</div>
+              </div>
+            );
+          })}
+
+        {places &&
+          places.map((data, index) => {
+            return (
+              <GeneralCard
+                key={index}
+                title={data.name}
+                about={data.about}
+                imageURL={data.imageURL}
+              />
+            );
+          })}
+
+        {services &&
+          services.map((data, index) => {
+            return (
+              <ServiceCard
+                key={index}
+                name={data.name}
+                contact={data.contact}
+                distance={data.distance}
+                address={data.address}
+                openingTime={data.openingTime}
+                closingTime={data.closingTime}
+              />
+            );
+          })}
       </div>
     </div>
   );

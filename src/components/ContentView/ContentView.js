@@ -3,10 +3,15 @@ import { BiChevronLeft } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import DropDown from '../DropDown';
 
-const ContentView = ({ title }) => {
+const ContentView = ({ title, overview, features, imageURL }) => {
   const [open, setOpen] = useState(false);
   return (
-    <div className="flex flex-col items-center w-screen h-screen pt-8 bg-product-dark">
+    <div
+      className="flex flex-col items-center w-screen h-screen pt-8 bg-product-dark"
+      style={{
+        backgroundImage: `url("${imageURL}")`,
+      }}
+    >
       <div className="flex items-center justify-between w-full h-12">
         <Link to="/">
           <div className="flex items-center h-full p-4 ml-8 rounded-md bg-product-yellow text-product-dark">
@@ -17,7 +22,8 @@ const ContentView = ({ title }) => {
           onClick={() => {
             setOpen(!open);
           }}
-          className="h-full p-4 mr-8 rounded-md bg-product-light relative">
+          className="relative h-full p-4 mr-8 rounded-md bg-product-light"
+        >
           <DropDown open={open} />
         </div>
       </div>
@@ -25,16 +31,15 @@ const ContentView = ({ title }) => {
       <div className="w-full h-full p-8 mt-64 rounded-t-3xl bg-product-light">
         <div className="pt-4">
           {title && <h2 className="text-2xl">{title}</h2>}
-          <h2 className="mt-4 text-justify">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Accusantium nulla optio tenetur, iusto ratione totam! Natus, id eos
-            porro illo deleniti voluptatibus.
-          </h2>
-          <ul className="pl-4 mt-4 list-disc">
-            <li>Lorem ipsum dolor sit amet</li>
-            <li>Lorem ipsum dolor sit amet</li>
-            <li>Lorem ipsum dolor sit amet</li>
-          </ul>
+          {overview && <h2 className="mt-4 text-justify">{overview}</h2>}
+
+          {features && (
+            <ul className="pl-4 mt-4 list-disc">
+              {features.map((feature, index) => {
+                return <li key={index}>{feature}</li>;
+              })}
+            </ul>
+          )}
         </div>
       </div>
     </div>
