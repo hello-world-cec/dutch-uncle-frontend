@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import ContentView from './components/ContentView/ContentView';
 import CardView from './components/CardView/CardView';
+import ServiceCard from './components/ServiceCard/ServiceCard';
 
 function App() {
   return (
