@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import { BiDotsVerticalRounded, BiChevronLeft } from 'react-icons/bi';
+import { BiUserCircle, BiChevronLeft } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import DropDown from '../../components/DropDown';
+import { AiFillTrophy } from 'react-icons/ai';
 
-import { GiTrophyCup } from 'react-icons/gi';
+import { GiTrophyCup, GiCrossedSwords, GiAncientSword } from 'react-icons/gi';
 import { BsFillPersonFill } from 'react-icons/bs';
 
 function UserProfile() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="h-screen">
+    <div className="h-screen bg-gray-100">
       <div className="w-screen p-8">
         <div className="flex items-center justify-between w-full h-12">
           <Link to="/">
@@ -27,25 +28,40 @@ function UserProfile() {
             <DropDown open={open} />
           </div>
         </div>
-        <div className="box-border flex items-center w-32 h-32 p-2 m-auto mt-8 border-4 ">
-          <BsFillPersonFill size={200} color="lightblue" />
-        </div>
-        <div className="flex items-center justifly-center ">
-          <h1 className="w-full text-xl text-4xl text-center text-product-dark">
-            John Depp
+
+        <div className="flex flex-col  items-center pb-14 ">
+          {/* <div className="pb-6 mt-10">
+            <BiUserCircle size={100} />
+          </div> */}
+          <div>
+            <img
+              className="rounded-full shadow-xl mx-auto mt-10  h-52 w-48 bg-cover bg-center"
+              src="https://source.unsplash.com/MP0IUfwrn0A"
+            />
+          </div>
+          <h1 className="w-full text-3xl text-center mt-10 text-product-dark">
+            User{' '}
           </h1>
         </div>
 
-        <div className="mt-8 border-t-4 border-opacity-100 rounded-t-lg filter drop-shadow-lg border-light-blue-500">
-          <div className="flex items-center justify-center gap-4 mt-5">
+        <div className="  rounded-t-lg filter drop-shadow-lg border-light-blue-500">
+          {/* <div className="flex items-center  justify-center gap-4 mt-5">
             <h1 className="text-3xl text-center"> 277 </h1>
             <GiTrophyCup size={25} color="red" />
-          </div>
+          </div> */}
           <div className="grid grid-cols-2 gap-4 mt-8 justify-items-center">
-            <div className="border-4 h-2git add .0 w-20 rounded-md bg-product-dark border-opacity-0"></div>
-            <div className="w-20 h-20 border-4 border-opacity-0 rounded-md bg-product-dark"></div>
-            <div className="w-20 h-20 border-4 border-opacity-0 rounded-md bg-product-dark"></div>
-            <div className="w-20 h-20 border-4 border-opacity-0 rounded-md bg-product-dark"></div>
+            <div className="flex justify-center items-center border-4 h-2git add .0 w-20 rounded-md bg-gray-100 border-opacity-0">
+              <GiCrossedSwords size={55} className="bg-white" />
+            </div>
+            <div className="flex justify-center items-center w-20 h-20 border-4 border-opacity-0 rounded-md bg-gray-100">
+              <GiAncientSword size={55} className="bg-white" />
+            </div>
+            <div className="flex justify-center items-center w-20 h-20 border-4 border-opacity-0 rounded-md bg-gray-100">
+              <AiFillTrophy size={55} className="bg-white" />
+            </div>
+            <div className="flex justify-center items-center w-20 h-20 border-4 border-opacity-0 rounded-md bg-gray-100">
+              <GiCrossedSwords size={55} className="bg-white" />
+            </div>
           </div>
         </div>
       </div>
