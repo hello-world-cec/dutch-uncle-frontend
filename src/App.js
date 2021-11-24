@@ -9,6 +9,7 @@ import Services from './pages/Services/Services';
 import Restaurants from './pages/Restaurants/Restaurants';
 import Places from './pages/Places/Places';
 import DosAndDonts from './pages/DosAndDonts/DosAndDonts';
+import UserProfile from './pages/UserProfile/UserProfile';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/restaurants" element={<Restaurants />} />
           <Route path="/dos-and-donts" element={<DosAndDonts />} />
+          <Route path="/profile" element={<UserProfile />} />
           <Route path="/" element={<Home />} />
         </Routes>
       </Router>
