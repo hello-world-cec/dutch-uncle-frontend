@@ -29,7 +29,7 @@ function BottomNavigation() {
       {Links &&
         Links.map((link) => {
           return (
-            <Link to={link.path}>
+            <Link to={link.path} key={link.path}>
               <link.icon
                 className={`text-2xl cursor-pointer ${
                   location.pathname === link.path
