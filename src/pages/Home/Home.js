@@ -23,7 +23,6 @@ const Home = () => {
     refreshLocationDetails();
     const json = localStorage.getItem('data');
     setData(JSON.parse(json));
-    console.log(data);
   }, [deviceLocation]);
 
   return (
@@ -49,7 +48,7 @@ const Home = () => {
         <div className="mt-8">
           <h2 className="w-full text-xl text-center text-product-dark">
             {/* TODO: REPLACE WITH data.overview */}
-            {data.culture.overview}
+            {data.overview}
           </h2>
         </div>
         <div className="px-4 mt-8">
