@@ -7,8 +7,8 @@ import {
   BiCheckCircle,
   BiChevronRight,
 } from 'react-icons/bi';
-
-import BottomNavigation from '../../component/BottomNavigation';
+import BottomNavigation from '../../components/BottomNavigation/BottomNavigation';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -42,42 +42,47 @@ const Home = () => {
           </h2>
         </div>
         <div className="px-4 mt-8">
-          <div className="flex items-center justify-between w-full">
-            <div className="flex items-center justify-center">
-              <div className="flex items-center justify-center text-2xl rounded-md w-14 h-14 bg-product-pink text-product-light">
-                <BiNews />
+          <Link to="/news">
+            <div className="flex items-center justify-between w-full">
+              <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center text-2xl rounded-md w-14 h-14 bg-product-pink text-product-light">
+                  <BiNews />
+                </div>
+
+                <h2 className="ml-8 text-xl">What's happening</h2>
               </div>
 
-              <h2 className="ml-8 text-xl">What's happening</h2>
-
+              <BiChevronRight className="ml-4 text-4xl text-product-pink" />
             </div>
-
-            <BiChevronRight className="ml-4 text-4xl text-product-pink" />
-          </div>
+          </Link>
         </div>
         <div className="px-4 mt-6">
-          <div className="flex items-center justify-between w-full">
-            <div className="flex items-center justify-center">
-              <div className="flex items-center justify-center text-2xl rounded-md w-14 h-14 bg-product-blue text-product-light">
-                <BiCheckCircle />
-              </div>
+          <Link to="/dos-and-donts">
+            <div className="flex items-center justify-between w-full">
+              <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center text-2xl rounded-md w-14 h-14 bg-product-blue text-product-light">
+                  <BiCheckCircle />
+                </div>
 
-              <h2 className="ml-8 text-xl">Do's and Don'ts</h2>
+                <h2 className="ml-8 text-xl">Do's and Don'ts</h2>
+              </div>
+              <BiChevronRight className="ml-4 text-4xl text-product-blue" />
             </div>
-            <BiChevronRight className="ml-4 text-4xl text-product-blue" />
-          </div>
+          </Link>
         </div>
-        <div className="px-4 mt-6">
-          <div className="flex items-center justify-between w-full">
-            <div className="flex items-center justify-center">
-              <div className="flex items-center justify-center text-2xl rounded-md w-14 h-14 bg-product-yellow text-product-light">
-                <BiSpa />
-              </div>
+        <div className="px-4 mt-6 mb-16">
+          <Link to="/culture">
+            <div className="flex items-center justify-between w-full">
+              <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center text-2xl rounded-md w-14 h-14 bg-product-yellow text-product-light">
+                  <BiSpa />
+                </div>
 
-              <h2 className="ml-8 text-xl">Culture</h2>
+                <h2 className="ml-8 text-xl">Culture</h2>
+              </div>
+              <BiChevronRight className="ml-4 text-4xl text-product-yellow" />
             </div>
-            <BiChevronRight className="ml-4 text-4xl text-product-yellow" />
-          </div>
+          </Link>
         </div>
       </div>
       <BottomNavigation />
