@@ -10,13 +10,20 @@ function UserLogin() {
         </div>
         <div className="login-body">
           <div className="username">
-            <div className="username-text">Username</div>
+            <div className="username-text" contenteditable="true">
+              Username
+            </div>
           </div>
           <div className="password">
-            <div className="password-text"> Password </div>
+            <div className="password-text" contenteditable="true">
+              Password
+            </div>
           </div>
           <div className="forgot-password"> Forgot Password? </div>
-          <div className="or"> OR </div>
+          <div className="login-button">
+            <div className="login-text"> LOGIN </div>
+          </div>
+          <div className="or"> or </div>
         </div>
         <div className="sign-up">
           Don't have an account?

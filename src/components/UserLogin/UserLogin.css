@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #eef9fa;
 }
 
 .login {
@@ -12,6 +13,9 @@
   display: flex;
   flex-direction: column;
   padding: 10px;
+  border: 1px solid white;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 }
 
 .login-header {
@@ -24,6 +28,7 @@
 
 .header-text {
   font-size: 35px;
+  text-align: center;
 }
 
 .login-body {
@@ -48,17 +53,42 @@
 .password-text {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   font-size: 15px;
-  padding: 0 30px 0 30px;
+  padding: 0 10px 0 10px;
+  color: #1a262f;
 }
 
 .forgot-password {
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  font-size: 10px;
+  font-size: 13px;
   margin-bottom: 15px;
+  color: #f4c533;
+  text-decoration: underline;
+}
+
+.login-button {
+  display: flex;
+  width: 40%;
+  border: 1px solid #88d9e0;
+  border-radius: 10px;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  margin: 5px auto;
+  background-color: #88d9e0;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.login-text {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+  padding: 0 30px 0 30px;
+  font-weight: bold;
 }
 
 .or {
@@ -67,6 +97,7 @@
   justify-content: center;
   font-size: 15px;
   align-items: center;
+  margin-top: 15px;
 }
 
 .sign-up {
@@ -78,10 +109,12 @@
   margin-bottom: 10px;
   padding-left: 5px;
   padding-right: 5px;
+  color: #de6878;
 }
 
 span {
   text-decoration: underline;
   padding-left: 5px;
   padding-right: 5px;
+  color: #de6878;
 }
