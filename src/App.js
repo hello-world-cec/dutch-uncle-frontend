@@ -2,6 +2,7 @@ import react from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ContentView from './components/ContentView/ContentView';
 import CardView from './components/CardView/CardView';
+import UserLogin from './pages/UserLogin/UserLogin';
 import Home from './pages/Home/Home';
 import News from './pages/News/News';
 import Culture from './pages/Culture/Culture';
@@ -25,6 +26,7 @@ function App() {
           <Route path="/restaurants" element={<Restaurants />} />
           <Route path="/dos-and-donts" element={<DosAndDonts />} />
           <Route path="/profile" element={<UserProfile />} />
+          <Route path="/login" element={<UserLogin />} />
           <Route path="/" element={<Home />} />
         </Routes>
       </Router>

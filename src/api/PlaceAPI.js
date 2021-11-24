@@ -15,6 +15,7 @@ const refreshLocationDetails = async () => {
   const json = await response.json();
   const data = JSON.stringify(json);
   localStorage.setItem('data', data);
+  return JSON.parse(data);
 };
 
 const getNews = () => {

@@ -18,15 +18,20 @@ const Home = () => {
   const json = localStorage.getItem('data');
   const [data, setData] = useState(JSON.parse(json));
   const [searchDropDown, setSearchDropDown] = useState(false);
+  const [loading, setLoading] = useState(true);
+
 
   useEffect(() => {
     setCurrentLocation(deviceLocation);
-    refreshLocationDetails();
-    const json = localStorage.getItem('data');
-    setData(JSON.parse(json));
+    refreshLocationDetails().then((details) => {
+      setData(details);
+      setLoading(false);
+    });
   }, [deviceLocation]);
 
-  return (
+  return loading ? (
+    <div className="h-screen"></div>
+  ) : (
     <div className="h-screen">
       <div className="w-screen p-8">
         <div className="flex items-center justify-between w-full h-12">
@@ -53,25 +58,36 @@ const Home = () => {
               setSearchDropDown(!searchDropDown);
             }}
           />
-          {searchDropDown && (
-            <div className="absolute z-50 flex flex-col w-full text-gray-700 bg-red-900 rounded-sm rounded-md top-14 drop-shadow-md bg-product-light ring-black ring-1 ring-opacity-5">
-              <a
-                className="px-6 py-4 text-sm border-b hover:bg-gray-100"
-                href="#"
-              >
-                Chengannur
-              </a>
-              <a
-                className="px-6 py-4 text-sm border-b hover:bg-gray-200"
-                href="#"
-              >
-                Kochi
-              </a>
-              <a className="px-6 py-4 text-sm hover:bg-gray-100" href="#">
-                Alappuzha
-              </a>
-            </div>
-          )}
+          <div
+            className={`absolute z-50 flex flex-col w-full text-gray-700 bg-red-900 rounded-sm rounded-md top-14 drop-shadow-md bg-product-light ring-black ring-1 ring-opacity-5 ${
+              searchDropDown ? 'opacity-100' : 'opacity-0 h-0'
+            }`}
+          >
+            <button
+              className="px-6 py-4 text-sm border-b hover:bg-gray-100"
+              onClick={() => {
+                setDeviceLocation('Chengannur');
+              }}
+            >
+              Chengannur
+            </button>
+            <button
+              className="px-6 py-4 text-sm border-b hover:bg-gray-200"
+              onClick={() => {
+                setDeviceLocation('Kochi');
+              }}
+            >
+              Kochi
+            </button>
+            <button
+              className="px-6 py-4 text-sm hover:bg-gray-100"
+              onClick={() => {
+                setDeviceLocation('Alappuzha');
+              }}
+            >
+              Alappuzha
+            </button>
+          </div>
         </div>
 
         <div className="mt-8">
