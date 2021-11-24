@@ -1,16 +1,22 @@
-import react from 'react';
+import React, { useState } from 'react';
 import { BiChevronLeft } from 'react-icons/bi';
-import { FiMoreVertical } from 'react-icons/fi';
+import DropDown from '../DropDown';
 
 const ContentView = () => {
+  const [open, setOpen] = useState(false);
   return (
     <div className="flex flex-col items-center w-screen h-screen pt-8 bg-product-dark">
       <div className="flex items-center justify-between w-full h-12">
         <div className="flex items-center h-full p-4 ml-8 rounded-md bg-product-yellow text-product-dark">
           <BiChevronLeft className="text-2xl" />
         </div>
-        <div className="h-full p-4 mr-8 rounded-md bg-product-light">
-          <FiMoreVertical />
+        <div
+          onClick={() => {
+            setOpen(!open);
+          }}
+          className="h-full p-4 mr-8 rounded-md bg-product-light relative"
+        >
+          <DropDown open={open} />
         </div>
       </div>
 
