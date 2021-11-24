@@ -3,7 +3,7 @@ import ContentView from '../../components/ContentView/ContentView';
 const Culture = () => {
   return (
     <div>
-      <ContentView />
+      <ContentView title={'Culture'} />
     </div>
   );
 };

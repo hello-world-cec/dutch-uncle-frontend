@@ -3,7 +3,7 @@ import ContentView from '../../components/ContentView/ContentView';
 const DosAndDonts = () => {
   return (
     <div>
-      <ContentView />
+      <ContentView title={"Do's & Don'ts"} />
     </div>
   );
 };

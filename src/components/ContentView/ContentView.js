@@ -3,7 +3,7 @@ import { BiChevronLeft } from 'react-icons/bi';
 import { FiMoreVertical } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
-const ContentView = () => {
+const ContentView = ({ title }) => {
   return (
     <div className="flex flex-col items-center w-screen h-screen pt-8 bg-product-dark">
       <div className="flex items-center justify-between w-full h-12">
@@ -19,7 +19,7 @@ const ContentView = () => {
 
       <div className="w-full h-full p-8 mt-64 rounded-t-3xl bg-product-light">
         <div className="pt-4">
-          <h2 className="text-2xl">CULTURE</h2>
+          {title && <h2 className="text-2xl">{title}</h2>}
           <h2 className="mt-4 text-justify">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium nulla optio tenetur, iusto ratione totam! Natus, id eos
