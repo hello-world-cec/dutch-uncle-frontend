@@ -1,32 +1,45 @@
-import react from 'react';
+import React, { useState } from 'react';
 import { BiChevronLeft } from 'react-icons/bi';
-import { FiMoreVertical } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
+import DropDown from '../DropDown';
 
-const ContentView = () => {
+const ContentView = ({ title, overview, features, imageURL }) => {
+  const [open, setOpen] = useState(false);
   return (
-    <div className="flex flex-col items-center w-screen h-screen pt-8 bg-product-dark">
+    <div
+      className="flex flex-col items-center w-screen h-screen pt-8 bg-product-dark"
+      style={{
+        backgroundImage: `url("${imageURL}")`,
+      }}
+    >
       <div className="flex items-center justify-between w-full h-12">
-        <div className="flex items-center h-full p-4 ml-8 rounded-md bg-product-yellow text-product-dark">
-          <BiChevronLeft className="text-2xl" />
-        </div>
-        <div className="h-full p-4 mr-8 rounded-md bg-product-light">
-          <FiMoreVertical />
+        <Link to="/">
+          <div className="flex items-center h-full p-4 ml-8 rounded-md bg-product-yellow text-product-dark">
+            <BiChevronLeft className="text-2xl" />
+          </div>
+        </Link>
+        <div
+          onClick={() => {
+            setOpen(!open);
+          }}
+          className="relative h-full p-4 mr-8 rounded-md bg-product-light"
+        >
+          <DropDown open={open} />
         </div>
       </div>
 
       <div className="w-full h-full p-8 mt-64 rounded-t-3xl bg-product-light">
         <div className="pt-4">
-          <h2 className="text-2xl">CULTURE</h2>
-          <h2 className="mt-4 text-justify">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Accusantium nulla optio tenetur, iusto ratione totam! Natus, id eos
-            porro illo deleniti voluptatibus.
-          </h2>
-          <ul className="pl-4 mt-4 list-disc">
-            <li>Lorem ipsum dolor sit amet</li>
-            <li>Lorem ipsum dolor sit amet</li>
-            <li>Lorem ipsum dolor sit amet</li>
-          </ul>
+          {title && <h2 className="text-2xl">{title}</h2>}
+          {overview && <h2 className="mt-4 text-justify">{overview}</h2>}
+
+          {features && (
+            <ul className="pl-4 mt-4 list-disc">
+              {features.map((feature, index) => {
+                return <li key={index}>{feature}</li>;
+              })}
+            </ul>
+          )}
         </div>
       </div>
     </div>
