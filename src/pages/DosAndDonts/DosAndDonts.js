@@ -1,23 +1,19 @@
+import { useEffect, useState } from 'react';
 import ContentView from '../../components/ContentView/ContentView';
+import { getDosAndDonts } from '../../api/PlaceAPI';
 
 const DosAndDonts = () => {
-  const data = {
-    title: "Do's & Don'ts",
-    overview:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium nulla optio tenetur, iusto ratione totam! Natus, id eosporro illo deleniti voluptatibus.',
-    features: [
-      'Lorem ipsum dolor sit amet',
-      'Lorem ipsum dolor sit amet',
-      'Lorem ipsum dolor sit amet',
-    ],
-  };
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    setData(getDosAndDonts());
+  }, []);
 
   return (
     <div>
       <ContentView
-        title={data.title}
-        overview={data.overview}
+        title="Do's & Don'ts"
         features={data.features}
+        imageURL={data.imageURL}
       />
     </div>
   );
