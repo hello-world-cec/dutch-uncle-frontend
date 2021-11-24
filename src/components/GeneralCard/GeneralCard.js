@@ -7,9 +7,6 @@ function GeneralCard(){
         <img alt="restaurant / place image" src="" class="max-h-40 w-full object-cover"/>
         <div class="bg-product-blue dark:bg-gray-800 w-full p-4">
             <p class="text-indigo-500 text-md font-medium">
-                Restaurants
-            </p>
-            <p class="text-gray-800 dark:text-white text-xl font-medium mb-2">
                 Title
             </p>
             <p class="text-gray-600 dark:text-gray-300  text-md">
