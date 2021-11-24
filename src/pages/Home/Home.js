@@ -18,15 +18,20 @@ const Home = () => {
   const json = localStorage.getItem('data');
   const [data, setData] = useState(JSON.parse(json));
   const [searchDropDown, setSearchDropDown] = useState(false);
-  
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     setCurrentLocation(deviceLocation);
-    refreshLocationDetails();
-    const json = localStorage.getItem('data');
-    setData(JSON.parse(json));
+    refreshLocationDetails().then((details) => {
+      setData(details);
+      console.log('hello');
+      setLoading(false);
+    });
   }, [deviceLocation]);
 
-  return (
+  return loading ? (
+    <div className="h-screen"></div>
+  ) : (
     <div className="h-screen">
       <div className="w-screen p-8">
         <div className="flex items-center justify-between w-full h-12">
@@ -52,20 +57,20 @@ const Home = () => {
             }}
           />
           {searchDropDown && (
-            <div className="top-14 rounded-md w-full  absolute z-50 flex flex-col drop-shadow-md bg-red-900 text-gray-700 bg-product-light ring-black ring-1 ring-opacity-5 rounded-sm">
+            <div className="absolute z-50 flex flex-col w-full text-gray-700 bg-red-900 rounded-sm rounded-md top-14 drop-shadow-md bg-product-light ring-black ring-1 ring-opacity-5">
               <a
-                className="hover:bg-gray-100 border-b   px-6 py-4 text-sm"
+                className="px-6 py-4 text-sm border-b hover:bg-gray-100"
                 href="#"
               >
                 Chengannur
               </a>
               <a
-                className="hover:bg-gray-200  border-b px-6 py-4 text-sm"
+                className="px-6 py-4 text-sm border-b hover:bg-gray-200"
                 href="#"
               >
                 Kochi
               </a>
-              <a className="hover:bg-gray-100     px-6 py-4 text-sm" href="#">
+              <a className="px-6 py-4 text-sm hover:bg-gray-100" href="#">
                 Alappuzha
               </a>
             </div>
